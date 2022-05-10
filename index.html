@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="root">
+        <!-- Header -->
+        <header>
+            <img class="header-logo" src="img/logo.png" alt="">
+        </header>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <main>
+            <section class="filters">
+
+                <div class="filter-item">
+                    <input 
+                    type="text"
+                    placeholder="Nuovo ToDo"
+                    @keyup.enter="addTodo"
+                    v-model="newTodo">
+
+                    <button @click="addTodo">Aggiungi</button>
+                </div>
+
+                <div class="filter-item">
+                    <label for="filter-text">Filtra i todo</label>
+                    <input id="filter-text" type="text" placeholder="scrivi per filtrare" v-model="search" @keyup="filterTodos">
+                </div>
+
+            </section>
+
+            <section class="todos">
+                <ul class="todos-list">
+                    <li 
+                    v-for="(item, index) in todos"
+                    v-if="item.visible"
+                    :class="item.done ? 'done' : ''"
+                    >
+                        <span @click="toggleDone(index)">
+                            {{ item.text }}
+                        </span>
+                        <div class="todo-actions">
+                            <i 
+                            @click="removeTodo(index)"
+                            class="fas fa-trash-alt"
+                            ></i>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+        </main>
+        <!-- /Main -->
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

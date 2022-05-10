@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header .header-logo {
+    width: 300px;
+}
+
+/* MAIN */
+/* Filters section */
+
+.filter-item {
+    text-align: center;
+}
+
+.filter-item input,
+.filter-item button {
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+}
+
+/* Todos sections */
+.todos {
+    background-color: #f5f5f5;
+    width: 70%;
+    margin: 2rem auto 0;
+}
+
+ul.todos-list {
+    list-style: none;
+    padding: 1rem;
+}
+
+ul.todos-list li {
+    border-bottom: 1px solid black;
+    font-size: 1.4rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul.todos-list li span {
+    flex-grow: 1;
+}
+
+ul.todos-list li.done {
+    background-color: lightgreen;
+}
